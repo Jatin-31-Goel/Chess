@@ -12,7 +12,7 @@ class rook: public piece{
 
      bool is_possible_rook(int x,int y,chessboard chess)
     {
-        cout<<"ROOK"<<endl;
+        //cout<<"ROOK"<<endl;
         if(this->y == y && this->x == x)
             return false;
         else if (this->y == y){
