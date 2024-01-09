@@ -43,8 +43,11 @@ int main(){
                 case 'R' : {
                     if(WR1.x == x1 && WR1.y == y1){
                         if(WR1.is_possible_rook(x2, y2, chess)){
+                            WR1.movements++;
                             WR1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WR1.movements--;
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -53,8 +56,11 @@ int main(){
                     }
                     else if(WR2.x == x1 && WR2.y == y1){
                         if(WR2.is_possible_rook(x2, y2, chess)){
+                            WR2.movements++;
                             WR2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WR2.movements--;
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -129,6 +135,8 @@ int main(){
                         if(WP1.is_possible(x2, y2, chess)){
                             WP1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP1.movements--;
                             temp = WP1.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -155,10 +163,10 @@ int main(){
                     }
                     if(WP2.x == x1 && WP2.y == y1){
                         if(WP2.is_possible(x2, y2, chess)){
-
                             WP2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
-
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP2.movements--;
                             temp = WP2.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -187,7 +195,8 @@ int main(){
                         if(WP3.is_possible(x2, y2, chess)){
                             WP3.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
-
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP3.movements--;
                             temp = WP3.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -216,6 +225,8 @@ int main(){
                         if(WP4.is_possible(x2, y2, chess)){
                             WP4.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP4.movements--;
                             temp = WP4.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -244,7 +255,8 @@ int main(){
                         if(WP5.is_possible(x2, y2, chess)){
                             WP5.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
-
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP5.movements--;
                             temp = WP5.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -273,7 +285,8 @@ int main(){
                         if(WP6.is_possible(x2, y2, chess)){
                             WP6.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
-
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP6.movements--;
                             temp = WP6.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -302,7 +315,8 @@ int main(){
                         if(WP7.is_possible(x2, y2, chess)){
                             WP7.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
-
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP7.movements--;
                             temp = WP7.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -331,7 +345,8 @@ int main(){
                         if(WP8.is_possible(x2, y2, chess)){
                             WP8.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
-
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WP8.movements--;
                             temp = WP8.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -364,6 +379,8 @@ int main(){
                         if(WK.is_possible(x2, y2, chess)){
                             WK.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WR1.movements--;
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -377,7 +394,7 @@ int main(){
                         break;
             }
 
-            if(!WK.is_illegal( WK.x, WK.y, chess))
+            if(!WK.is_legal( WK.x, WK.y, chess))
             {
                 cout<<"ILLEGAL MOVE"<<endl;
                 for(int i = 1; i<9; i++)
