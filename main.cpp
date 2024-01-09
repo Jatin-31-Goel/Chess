@@ -377,11 +377,28 @@ int main(){
                 {
                     if(WK.x == x1 && WK.y == y1){
                         if(WK.is_possible(x2, y2, chess)){
-                            WK.movements++;
-                            WK.change_coordinates(x2, y2);
-                            chess.change(x1, x2, y1 , y2);
-                            if(!WK.is_legal( WK.x, WK.y, chess))
-                                WK.movements--;
+                            if(x1==1 && x2==1 && y1==5 && y2==7 && WR2.movements==0 && WR2.x==1 && WR2.y==8)
+                            {
+                                WK.movements++;
+                                WK.change_coordinates(x2, y2);
+                                WR2.movements++;
+                                WR2.change_coordinates(1,6);
+                                chess.change(x1, x2, y1 , y2);
+                                chess.change(1,1,8,6);
+                                if(!WK.is_legal( WK.x, WK.y, chess))
+                                {
+                                    WK.movements--;
+                                    WR2.movements--;
+                                }
+                            }
+                            else
+                            {
+                                WK.movements++;
+                                WK.change_coordinates(x2, y2);
+                                chess.change(x1, x2, y1 , y2);
+                                if(!WK.is_legal( WK.x, WK.y, chess))
+                                    WK.movements--;
+                            }
                         }
                         else{
                             cout<<"Invalid move"<<endl;
