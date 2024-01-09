@@ -21,7 +21,7 @@ class king{
         
         if((this->x==1 || this->x==8) && this->y==5 && this->movements==0 && (x==1 || x==8) && y==7)
         {
-            if(chess.chess[x][y-2].c=="**" && chess.chess[x][y-1].c=="**")
+            if(chess.chess[x][y].c=="**" && chess.chess[x][y-1].c=="**")
                 return true;
         }
         else if((temp1<=1 && temp2<=1) && !(temp1 ==0 && temp2 ==0))
@@ -38,7 +38,7 @@ class king{
         int temp = x - 1;
         while(temp>=1)
         {
-           // cout<<"1";
+            cout<<"1";
             if(chess.chess[temp][y].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp][y].c[0]!=chess.chess[x][y].c[0])
@@ -53,6 +53,7 @@ class king{
         temp = x + 1;
         while(temp<=8)
         {
+            cout<<"2";
             if(chess.chess[temp][y].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp][y].c[0]!=chess.chess[x][y].c[0])
@@ -67,14 +68,14 @@ class king{
         temp = y - 1;
         while(temp>=1)
         {
-           // cout<<"2";
+            cout<<"3";
             if(chess.chess[x][temp].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[x][temp].c[0]!=chess.chess[x][y].c[0])
             {
                 if(chess.chess[x][temp].c[1]=='R' || chess.chess[x][temp].c[1]=='Q')
                     return false;
-                else if(chess.chess[x][temp].c[1]=='K' && abs(temp - x) == 1)
+                else if(chess.chess[x][temp].c[1]=='K' && abs(temp - y) == 1)
                     return false;
             }
             temp--;
@@ -82,14 +83,14 @@ class king{
         temp = y + 1;
         while(temp<=8)
         {
-           // cout<<"3";
-           if(chess.chess[x][temp].c[0]==chess.chess[x][y].c[0])
+            cout<<"4";
+            if(chess.chess[x][temp].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[x][temp].c[0]!=chess.chess[x][y].c[0])
             {
                 if(chess.chess[x][temp].c[1]=='R' || chess.chess[x][temp].c[1]=='Q')
                     return false;
-                else if(chess.chess[x][temp].c[1]=='K' && abs(temp - x) == 1)
+                else if(chess.chess[x][temp].c[1]=='K' && abs(temp - y) == 1)
                     return false;
             }
             temp++;
@@ -98,8 +99,8 @@ class king{
         int temp2 = y - 1;
         while(temp1>=1 && temp2>=1)
         {
-          //  cout<<"4";
-             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
+            cout<<"5";
+            if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0])
             {
@@ -115,7 +116,7 @@ class king{
         temp2 = y + 1;
         while(temp1<=8 && temp2<=8)
         {
-           // cout<<"5";
+           cout<<"6";
            if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0])
@@ -132,7 +133,7 @@ class king{
         temp2 = y + 1;
         while(temp1>=1 && temp2<=8)
         {
-          //  cout<<"6";
+            cout<<"7";
             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0])
@@ -149,7 +150,7 @@ class king{
         temp2 = y - 1;
         while(temp1<=8 && temp2>=1)
         {
-          //  cout<<"7";
+            cout<<"8";
             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0])
