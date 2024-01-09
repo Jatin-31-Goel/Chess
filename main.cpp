@@ -377,10 +377,11 @@ int main(){
                 {
                     if(WK.x == x1 && WK.y == y1){
                         if(WK.is_possible(x2, y2, chess)){
+                            WK.movements++;
                             WK.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
-                                WR1.movements--;
+                                WK.movements--;
                         }
                         else{
                             cout<<"Invalid move"<<endl;
