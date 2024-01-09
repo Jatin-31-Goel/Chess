@@ -19,7 +19,12 @@ class king{
         int temp1 = abs(x - this->x);
         int temp2 = abs(y - this->y);
         
-        if((temp1<=1 && temp2<=1) && !(temp1 ==0 && temp2 ==0))
+        if((this->x==1 || this->x==8) && this->y==5 && this->movements==0 && (x==1 || x==8) && y==7)
+        {
+            if(chess.chess[x][y-2].c=="**" && chess.chess[x][y-1].c=="**")
+                return true;
+        }
+        else if((temp1<=1 && temp2<=1) && !(temp1 ==0 && temp2 ==0))
         {
             if((chess.chess[x][y].c[0]!=chess.chess[this->x][this->y].c[0]))
                 return true;
@@ -28,7 +33,7 @@ class king{
 
         return false;
     }
-    bool is_illegal(int x,int y,chessboard chess)
+    bool is_legal(int x,int y,chessboard chess)
     {
         int temp = x - 1;
         while(temp>=1)
@@ -204,6 +209,4 @@ class king{
         this->x = x;
         this->y = y;
     }
-    
-
 };
