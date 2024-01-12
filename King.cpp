@@ -164,7 +164,7 @@ class king{
         temp2 = y - 1;
         while(temp1<=8 && temp2>=1)
         {
-            cout<<"8";
+            //cout<<"8";
             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
