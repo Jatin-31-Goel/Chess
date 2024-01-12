@@ -68,8 +68,18 @@ class pawn{
                 return (++(++this->movements))&& true ;
             else if((x - this->x == 1) && (y - this->y == 1) && (chess.chess[x][y].c[0]=='B'))
                 return (++this->movements)&&true;  
-
             else if(((x - this->x == 1) && (y - this->y == -1) && (chess.chess[x][y].c[0]=='B')))
+                return (++this->movements)&&true;  
+        }
+        else if(chess.chess[this->x][this->y].c[0]=='B')
+        {
+            if((this->x - x == 1) && (this->y == y) && (chess.chess[x][y].c=="**"))
+                return (++this->movements)&&true;
+            else if((this->x - x == 2) && (this->y == y) && (this->movements == 0) && (chess.chess[x][y].c=="**"))
+                return (++(++this->movements))&& true ;
+            else if((this->x - x == 1) && (this->y - y == 1) && (chess.chess[x][y].c[0]=='W'))
+                return (++this->movements)&&true;  
+            else if(((this->x - x == 1) && (this->y - y == -1) && (chess.chess[x][y].c[0]=='W')))
                 return (++this->movements)&&true;  
         }
         return false;
