@@ -47,7 +47,10 @@ int main(){
                             WR1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WR1.movements--;
+                                WR1.change_coordinates(x1, y1);
+                            }
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -60,7 +63,10 @@ int main(){
                             WR2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WR2.movements--;
+                                WR2.change_coordinates(x1, y1);
+                            }
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -73,6 +79,8 @@ int main(){
                     if(WQ.is_possible(x2, y2, chess)){
                         WQ.change_coordinates(x2, y2);
                         chess.change(x1, x2, y1 , y2);
+                        if(!WK.is_legal( WK.x, WK.y, chess))
+                            WQ.change_coordinates(x1, y1);
                     }
                    else{
                         cout<<"Invalid move"<<endl;
@@ -86,6 +94,8 @@ int main(){
                         if(WN1.is_possible(x2, y2, chess)){
                             WN1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WN1.change_coordinates(x1, y1);
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -96,6 +106,8 @@ int main(){
                         if(WN2.is_possible(x2, y2, chess)){
                             WN2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WN2.change_coordinates(x1, y1);
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -110,6 +122,8 @@ int main(){
                         if(WB1.is_possible_bishop(x2, y2, chess)){
                             WB1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WB1.change_coordinates(x1, y1);
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -120,6 +134,8 @@ int main(){
                         if(WB2.is_possible_bishop(x2, y2, chess)){
                             WB2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
+                            if(!WK.is_legal( WK.x, WK.y, chess))
+                                WB2.change_coordinates(x1, y1);
                         }
                         else{
                             cout<<"Invalid move"<<endl;
@@ -136,7 +152,10 @@ int main(){
                             WP1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP1.movements--;
+                                WP1.change_coordinates(x1, y1);
+                            }
                             temp = WP1.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -166,7 +185,10 @@ int main(){
                             WP2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP2.movements--;
+                                WP2.change_coordinates(x1, y1);
+                            }
                             temp = WP2.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -196,7 +218,10 @@ int main(){
                             WP3.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP3.movements--;
+                                WP3.change_coordinates(x1, y1);
+                            }
                             temp = WP3.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -226,7 +251,10 @@ int main(){
                             WP4.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP4.movements--;
+                                WP4.change_coordinates(x1, y1);
+                            }
                             temp = WP4.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -256,7 +284,10 @@ int main(){
                             WP5.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP5.movements--;
+                                WP5.change_coordinates(x1, y1);
+                            }
                             temp = WP5.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -286,7 +317,10 @@ int main(){
                             WP6.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP6.movements--;
+                                WP6.change_coordinates(x1, y1);
+                            }
                             temp = WP6.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -316,7 +350,10 @@ int main(){
                             WP7.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP7.movements--;
+                                WP7.change_coordinates(x1, y1);
+                            }
                             temp = WP7.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -346,7 +383,10 @@ int main(){
                             WP8.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
+                            {
                                 WP8.movements--;
+                                WP8.change_coordinates(x1, y1);
+                            }
                             temp = WP8.change_piece(chess);
                             if(temp){
                                 if(temp == 1){
@@ -395,16 +435,35 @@ int main(){
                                 {
                                     WK.movements--;
                                     WR2.movements--;
+                                    WK.change_coordinates(x1, y1);
+                                    WR2.change_coordinates(1,8);
+                                    
+                                    for(int i = 1; i<9; i++)
+                                        for(int j = 1; j<9; j++)
+                                            chess.chess[i][j] = chess_2.chess[i][j];
+                                    cout<<"ILLEGAL MOVE"<<endl;
+            
+                                    chess.print();
+                                    continue;
                                 }
                             }
                             else
                             {
-                                
                                 WK.movements++;
                                 WK.change_coordinates(x2, y2);
                                 chess.change(x1, x2, y1 , y2);
                                 if(!WK.is_legal( WK.x, WK.y, chess))
+                                {
                                     WK.movements--;
+                                    WK.change_coordinates(x1, y1);
+                                    cout<<"ILLEGAL MOVE"<<endl;
+                                        for(int i = 1; i<9; i++)
+                                            for(int j = 1; j<9; j++)
+                                                chess.chess[i][j] = chess_2.chess[i][j];
+            
+                                    chess.print();
+                                    continue;
+                                }
                             }
                         }
                         else{
@@ -418,7 +477,6 @@ int main(){
                         continue;
                         break;
             }
-
             if(!WK.is_legal( WK.x, WK.y, chess))
             {
                 cout<<"ILLEGAL MOVE"<<endl;
@@ -430,7 +488,471 @@ int main(){
                 continue;
             }
             chess.print();
-            turn = 0;
+            turn = 1;
         }   
+        else{
+            if(chess.chess[x1][y1].c[0] == 'W'){
+                cout<<"You cannot move opponents piece"<<endl;
+                continue;
+            }
+            for(int i = 1; i<9; i++){
+                for(int j = 1; j<9; j++){
+                    chess_2.chess[i][j] = chess.chess[i][j];
+                }
+            }
+            switch(chess.chess[x1][y1].c[1]){
+                case 'R' : {
+                    if(BR1.x == x1 && BR1.y == y1){
+                        if(BR1.is_possible_rook(x2, y2, chess)){
+                            BR1.movements++;
+                            BR1.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BR1.movements--;
+                                BR1.change_coordinates(x1, y1);
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    else if(BR2.x == x1 && BR2.y == y1){
+                        if(BR2.is_possible_rook(x2, y2, chess)){
+                            BR2.movements++;
+                            BR2.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BR2.movements--;
+                                BR2.change_coordinates(x1, y1);
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    break;
+                }
+                case 'Q' : {
+                    if(BQ.is_possible(x2, y2, chess)){
+                        BQ.change_coordinates(x2, y2);
+                        chess.change(x1, x2, y1 , y2);
+                        if(!BK.is_legal( BK.x, BK.y, chess))
+                        BQ.change_coordinates(x1, y1);
+                    }
+                   else{
+                        cout<<"Invalid move"<<endl;
+                        continue;
+                    }                   
+                    break;
+                }
+                case 'N' : 
+                {
+                    if(BN1.x == x1 && BN1.y == y1){
+                        if(BN1.is_possible(x2, y2, chess)){
+                            BN1.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                                BN1.change_coordinates(x1, y1);
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    else if(BN2.x == x1 && BN2.y == y1){
+                        if(BN2.is_possible(x2, y2, chess)){
+                            BN2.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                                BN2.change_coordinates(x1, y1);
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    break;
+                }
+                case 'B' : 
+                {
+                    if(BB1.x == x1 && BB1.y == y1){
+                        if(BB1.is_possible_bishop(x2, y2, chess)){
+                            BB1.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                                BB1.change_coordinates(x1, y1);
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    else if(BB2.x == x1 && BB2.y == y1){
+                        if(BB2.is_possible_bishop(x2, y2, chess)){
+                            BB2.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                                BB2.change_coordinates(x1, y1);
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    break;
+                }
+                case 'P' : 
+                {
+                    int temp;
+                    if(BP1.x == x1 && BP1.y == y1){
+                        if(BP1.is_possible(x2, y2, chess)){
+                            BP1.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP1.movements--;
+                                BP1.change_coordinates(x1, y1);
+                            }
+                            temp = BP1.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP1.x][BP1.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP1.x][BP1.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP1.x][BP1.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP1.x][BP1.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP2.x == x1 && BP2.y == y1){
+                        if(BP2.is_possible(x2, y2, chess)){
+                            BP2.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP2.movements--;
+                                BP2.change_coordinates(x1, y1);
+                            }
+                            temp = BP2.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP2.x][BP2.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP2.x][BP2.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP2.x][BP2.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP2.x][BP2.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP3.x == x1 && BP3.y == y1){
+                        if(BP3.is_possible(x2, y2, chess)){
+                            BP3.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP3.movements--;
+                                BP3.change_coordinates(x1, y1);
+                            }
+                            temp = BP3.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP3.x][BP3.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP3.x][BP3.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP3.x][BP3.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP3.x][BP3.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP4.x == x1 && BP4.y == y1){
+                        if(BP4.is_possible(x2, y2, chess)){
+                            BP4.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP4.movements--;
+                                BP4.change_coordinates(x1, y1);
+                            }
+                            temp = BP4.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP4.x][BP4.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP4.x][BP4.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP4.x][BP4.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP4.x][BP4.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP5.x == x1 && BP5.y == y1){
+                        if(BP5.is_possible(x2, y2, chess)){
+                            BP5.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP5.movements--;
+                                BP5.change_coordinates(x1, y1);
+                            }
+                            temp = BP5.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP5.x][BP5.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP5.x][BP5.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP5.x][BP5.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP5.x][BP5.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP6.x == x1 && BP6.y == y1){
+                        if(BP6.is_possible(x2, y2, chess)){
+                            BP6.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP6.movements--;
+                                BP6.change_coordinates(x1, y1);
+                            }
+                            temp = BP6.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP6.x][BP6.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP6.x][BP6.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP6.x][BP6.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP6.x][BP6.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP7.x == x1 && BP7.y == y1){
+                        if(BP7.is_possible(x2, y2, chess)){
+                            BP7.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP7.movements--;
+                                BP7.change_coordinates(x1, y1);
+                            }
+                            temp = BP7.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP7.x][BP7.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP7.x][BP7.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP7.x][BP7.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP7.x][BP7.y].c = "BPN";
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    if(BP8.x == x1 && BP8.y == y1){
+                        if(BP8.is_possible(x2, y2, chess)){
+                            BP8.change_coordinates(x2, y2);
+                            chess.change(x1, x2, y1 , y2);
+                            if(!BK.is_legal( BK.x, BK.y, chess))
+                            {
+                                BP8.movements--;
+                                BP8.change_coordinates(x1, y1);
+                            }
+                            temp = BP8.change_piece(chess);
+                            if(temp){
+                                if(temp == 1){
+                                    chess.chess[BP8.x][BP8.y].c = "BPQ";
+                                }
+
+                                else if(temp == 2){
+                                    chess.chess[BP8.x][BP8.y].c = "BPB";
+                                }
+
+                                else if(temp == 3){
+                                    chess.chess[BP8.x][BP8.y].c = "BPR";
+                                }
+
+                                else{
+                                    chess.chess[BP8.x][BP8.y].c = "BPN";
+                                }
+                            }
+                        }
+
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    break;
+                }    
+                case 'K' : 
+                {
+                    if(BK.x == x1 && BK.y == y1){
+                        if(BK.is_possible(x2, y2, chess,BR2.movements)){
+                            if(x1==1 && x2==1 && y1==5 && y2==7)
+                            {
+                                if(!BK.is_legal( BK.x, BK.y, chess) || !WK.is_legal( BK.x, BK.y + 1, chess) || !WK.is_legal( WK.x, WK.y +2 , chess))
+                                {
+                                    cout<<"Castling Not Possible"<<endl;
+                                    chess.print();
+                                    continue;
+                                }
+                                BK.movements++;
+                                BK.change_coordinates(x2, y2);
+                                BR2.movements++;
+                                BR2.change_coordinates(1,6);
+                                chess.change(x1, x2, y1 , y2);
+                                chess.change(1,1,8,6);
+                                if(!BK.is_legal( BK.x, BK.y, chess))
+                                {
+                                    BK.movements--;
+                                    BR2.movements--;
+                                    BK.change_coordinates(x1, y1);
+                                    BR2.change_coordinates(1,8);
+                                    
+                                    for(int i = 1; i<9; i++)
+                                        for(int j = 1; j<9; j++)
+                                            chess.chess[i][j] = chess_2.chess[i][j];
+                                    cout<<"ILLEGAL MOVE"<<endl;
+            
+                                    chess.print();
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                BK.movements++;
+                                BK.change_coordinates(x2, y2);
+                                chess.change(x1, x2, y1 , y2);
+                                if(!BK.is_legal( BK.x, BK.y, chess))
+                                {
+                                    BK.movements--;
+                                    BK.change_coordinates(x1, y1);
+                                    cout<<"ILLEGAL MOVE"<<endl;
+                                        for(int i = 1; i<9; i++)
+                                            for(int j = 1; j<9; j++)
+                                                chess.chess[i][j] = chess_2.chess[i][j];
+            
+                                    chess.print();
+                                    continue;
+                                }
+                            }
+                        }
+                        else{
+                            cout<<"Invalid move"<<endl;
+                            continue;
+                        }
+                    }
+                    break;
+                }
+                default: cout<<"Invalid move"<<endl;
+                        continue;
+                        break;            
+            }
+            if(!BK.is_legal( BK.x, BK.y, chess))
+            {
+                cout<<"ILLEGAL MOVE"<<endl;
+                for(int i = 1; i<9; i++)
+                    for(int j = 1; j<9; j++)
+                        chess.chess[i][j] = chess_2.chess[i][j];
+            
+                chess.print();
+                continue;
+            }
+            chess.print();
+            turn = 0;
+            
+        }
     }
 }
+
