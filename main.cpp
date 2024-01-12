@@ -17,9 +17,9 @@ int main(){
     rook WR1('W', 1, 1), WR2('W', 1, 8), BR1('B', 8, 1), BR2('B', 8, 8);
     knight WN1('W', 1, 2), WN2('W', 1, 7), BN1('B', 8, 2), BN2('B', 8, 7);
     bishop WB1('W', 1, 3), WB2('W', 1, 6), BB1('B', 8, 3), BB2('B', 8, 6);
-    pawn WP1('W', 2, 1), WP2('W', 2, 2), WP3('W', 2, 3), WP4('W', 2, 4), WP5('W', 2, 5),WP6('W', 2, 6),WP7('W', 2, 7),WP8('W', 2, 8),BP1('W', 7, 1), BP2('W', 7, 2), BP3('W', 7, 3), BP4('W', 7, 4), BP5('W', 7, 5),BP6('W', 7, 6),BP7('W', 7, 7),BP8('W', 7, 8);
+    pawn WP1('W', 2, 1), WP2('W', 2, 2), WP3('W', 2, 3), WP4('W', 2, 4), WP5('W', 2, 5),WP6('W', 2, 6),WP7('W', 2, 7),WP8('W', 2, 8),BP1('B', 7, 1), BP2('B', 7, 2), BP3('B', 7, 3), BP4('B', 7, 4), BP5('B', 7, 5),BP6('B', 7, 6),BP7('B', 7, 7),BP8('B', 7, 8);
     queen WQ('W', 1,4), BQ('B', 8, 4);
-    king WK('W', 1, 5), BK('B', 8, 5);
+    king WK('W', 4, 6), BK('B', 8, 5);
     while(1)
     {  
         int x1, y1, x2, y2;
@@ -376,9 +376,15 @@ int main(){
                 case 'K' : 
                 {
                     if(WK.x == x1 && WK.y == y1){
-                        if(WK.is_possible(x2, y2, chess)){
-                            if(x1==1 && x2==1 && y1==5 && y2==7 && WR2.movements==0 && WR2.x==1 && WR2.y==8)
+                        if(WK.is_possible(x2, y2, chess,WR2.movements)){
+                            if(x1==1 && x2==1 && y1==5 && y2==7)
                             {
+                                if(!WK.is_legal( WK.x, WK.y, chess) || !WK.is_legal( WK.x, WK.y + 1, chess) || !WK.is_legal( WK.x, WK.y +2 , chess))
+                                {
+                                    cout<<"Castling Not Possible"<<endl;
+                                    chess.print();
+                                    continue;
+                                }
                                 WK.movements++;
                                 WK.change_coordinates(x2, y2);
                                 WR2.movements++;
@@ -393,6 +399,7 @@ int main(){
                             }
                             else
                             {
+                                
                                 WK.movements++;
                                 WK.change_coordinates(x2, y2);
                                 chess.change(x1, x2, y1 , y2);
