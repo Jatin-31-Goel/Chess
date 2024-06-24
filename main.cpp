@@ -19,7 +19,7 @@ int main(){
     bishop WB1('W', 1, 3), WB2('W', 1, 6), BB1('B', 8, 3), BB2('B', 8, 6);
     pawn WP1('W', 2, 1), WP2('W', 2, 2), WP3('W', 2, 3), WP4('W', 2, 4), WP5('W', 2, 5),WP6('W', 2, 6),WP7('W', 2, 7),WP8('W', 2, 8),BP1('B', 7, 1), BP2('B', 7, 2), BP3('B', 7, 3), BP4('B', 7, 4), BP5('B', 7, 5),BP6('B', 7, 6),BP7('B', 7, 7),BP8('B', 7, 8);
     queen WQ('W', 1,4), BQ('B', 8, 4);
-    king WK('W', 4, 6), BK('B', 8, 5);
+    king WK('W', 1, 5), BK('B', 8, 5);
     while(1)
     {  
         int x1, y1, x2, y2;
@@ -419,8 +419,18 @@ int main(){
                         if(WK.is_possible(x2, y2, chess,WR2.movements)){
                             if(x1==1 && x2==1 && y1==5 && y2==7)
                             {
-                                if(!WK.is_legal( WK.x, WK.y, chess) || !WK.is_legal( WK.x, WK.y + 1, chess) || !WK.is_legal( WK.x, WK.y +2 , chess))
-                                {
+                                if(!WK.is_legal( WK.x, WK.y, chess) || !WK.is_legal( WK.x, 6, chess) || !WK.is_legal( WK.x, 7 , chess))
+                                {   
+                                    int t1 = 0;
+                                    int t2 = 0;
+                                    int t3 = 0;
+                                    if(!WK.is_legal( WK.x, WK.y, chess))
+                                        t1 = 1;
+                                    if(!WK.is_legal( WK.x, WK.y + 1, chess))
+                                        t2 = 1;
+                                    if(!WK.is_legal( WK.x, WK.y + 2, chess))
+                                        t3 = 1;
+                                    cout<<t1<<" "<<t2<<" "<<t3<<endl;
                                     cout<<"Castling Not Possible"<<endl;
                                     chess.print();
                                     continue;
@@ -879,10 +889,20 @@ int main(){
                 {
                     if(BK.x == x1 && BK.y == y1){
                         if(BK.is_possible(x2, y2, chess,BR2.movements)){
-                            if(x1==1 && x2==1 && y1==5 && y2==7)
+                            if(x1==8 && x2==8 && y1==5 && y2==7)
                             {
-                                if(!BK.is_legal( BK.x, BK.y, chess) || !WK.is_legal( BK.x, BK.y + 1, chess) || !WK.is_legal( WK.x, WK.y +2 , chess))
-                                {
+                                if(!BK.is_legal( BK.x, BK.y, chess) || !BK.is_legal( BK.x, BK.y + 1, chess) || !BK.is_legal( BK.x, BK.y +2 , chess))
+                                {   
+                                    int t1 = 0;
+                                    int t2 = 0;
+                                    int t3 = 0;
+                                    if(!BK.is_legal( BK.x, BK.y, chess))
+                                        t1 = 1;
+                                    if(!BK.is_legal( BK.x, BK.y + 1, chess))
+                                        t2 = 1;
+                                    if(!BK.is_legal( BK.x, BK.y + 2, chess))
+                                        t3 = 1;
+                                    cout<<t1<<" "<<t2<<" "<<t3<<endl;
                                     cout<<"Castling Not Possible"<<endl;
                                     chess.print();
                                     continue;
@@ -890,15 +910,15 @@ int main(){
                                 BK.movements++;
                                 BK.change_coordinates(x2, y2);
                                 BR2.movements++;
-                                BR2.change_coordinates(1,6);
+                                BR2.change_coordinates(8,6);
                                 chess.change(x1, x2, y1 , y2);
-                                chess.change(1,1,8,6);
+                                chess.change(8,8,8,6);
                                 if(!BK.is_legal( BK.x, BK.y, chess))
                                 {
                                     BK.movements--;
                                     BR2.movements--;
                                     BK.change_coordinates(x1, y1);
-                                    BR2.change_coordinates(1,8);
+                                    BR2.change_coordinates(8,8);
                                     
                                     for(int i = 1; i<9; i++)
                                         for(int j = 1; j<9; j++)
