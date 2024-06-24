@@ -34,11 +34,11 @@ class king{
         return false;
     }
     bool is_legal(int x,int y,chessboard chess)
-    {
+    {   
         int temp = x - 1;
         while(temp>=1)
         {
-            //cout<<"1";
+           
             if(chess.chess[temp][y].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp][y].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
@@ -55,7 +55,7 @@ class king{
         temp = x + 1;
         while(temp<=8)
         {
-            //cout<<"2";
+          
             if(chess.chess[temp][y].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[temp][y].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
@@ -72,7 +72,7 @@ class king{
         temp = y - 1;
         while(temp>=1)
         {
-            //cout<<"3";
+            
             if(chess.chess[x][temp].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[x][temp].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
@@ -89,7 +89,7 @@ class king{
         temp = y + 1;
         while(temp<=8)
         {
-            //cout<<"4";
+            
             if(chess.chess[x][temp].c[0]==chess.chess[x][y].c[0])
                 break;
             else if(chess.chess[x][temp].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
@@ -106,11 +106,10 @@ class king{
         int temp1 = x - 1;
         int temp2 = y - 1;
         while(temp1>=1 && temp2>=1)
-        {
-            //cout<<"5";
+        {    
             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
             {
                 if(chess.chess[temp1][temp2].c[1]=='B' || chess.chess[temp1][temp2].c[1]=='Q')
                     return false;
@@ -125,12 +124,11 @@ class king{
         temp1 = x + 1;
         temp2 = y + 1;
         while(temp1<=8 && temp2<=8)
-        {
-           //cout<<"6";
+        {   
            if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
-            {
+            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
+            {   
                 if(chess.chess[temp1][temp2].c[1]=='B' || chess.chess[temp1][temp2].c[1]=='Q')
                     return false;
                 else if((chess.chess[temp1][temp2].c[1]=='K' || chess.chess[temp1][temp2].c[1]=='P') && (temp1 - x) == 1 && (temp2 - y) == 1)
@@ -145,10 +143,9 @@ class king{
         temp2 = y + 1;
         while(temp1>=1 && temp2<=8)
         {
-            //cout<<"7";
             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
             {
                 if(chess.chess[temp1][temp2].c[1]=='B' || chess.chess[temp1][temp2].c[1]=='Q')
                     return false;
@@ -164,10 +161,10 @@ class king{
         temp2 = y - 1;
         while(temp1<=8 && temp2>=1)
         {
-            //cout<<"8";
+            
             if(chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            else if(chess.chess[temp1][temp2].c[0]!=chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
             {
                 if(chess.chess[temp1][temp2].c[1]=='B' || chess.chess[temp1][temp2].c[1]=='Q')
                     return false;
