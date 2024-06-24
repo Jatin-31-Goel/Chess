@@ -40,7 +40,13 @@ class chessboard{
     }
 
     void print(){
+        cout<<"  ";
+        for(int i = 1; i<=8; i++){
+            cout<<" "<<i<<" ";
+        }
+        cout<<endl;
         for(int i = 8; i>=1; i--){
+            cout<<i<<" ";
             for(int j = 1; j<=8; j++){
                 cout<<this->chess[i][j].c<<" ";
             }
@@ -61,3 +67,4 @@ class piece{
     char color;
     int movements;
 };
+
