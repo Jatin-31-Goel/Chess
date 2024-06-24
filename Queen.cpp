@@ -20,7 +20,7 @@ class queen :public rook, public bishop{
         // rook r1(color, this->x, this->y);
         // bishop b1(color, this->x, this->y);
         if(is_possible_rook(x,y, chess) || is_possible_bishop(x, y, chess)){
-            return cout<<"1"&&true;
+            return true;
         }
         return false;
     } 
