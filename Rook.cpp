@@ -1,7 +1,8 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 class rook: public piece{
+
     public: 
     rook(char color, int x, int y) : piece(){
         this->color = color;
@@ -10,67 +11,57 @@ class rook: public piece{
         this->movements = 0;
     }
 
-     bool is_possible_rook(int x,int y,chessboard chess)
+    // To check if Rook can move to the coordinates (x,y)
+    bool is_possible_rook(int x,int y,chessboard chess)
     {
-        //cout<<"ROOK"<<endl;
-        if(this->y == y && this->x == x)
+        // Ensuring that target spot (x,y) does not have the same color piece
+        if(chess.chess[x][y].c[0] == chess.chess[this->x][this->y].c[0])
             return false;
-        else if (this->y == y){
-            if((x - this->x)>0)
-            {
-                int temp = x - 1;
-                while((temp - this->x)>0)
-                {
-                    if(chess.chess[temp][y].c!="**")
-                        return false;
-                    temp--;
-                }
-            }
-            else if((this->x - x)>0)
-            {
-                int temp = x + 1 ;
-                while((this->x - temp )>0)
-                {
-                    if(chess.chess[temp][y].c!="**")
-                        return false;
-                    temp++;
-                }
-            }
-            if(chess.chess[x][y].c[0]==chess.chess[this->x][this->y].c[0])
-                return false;
-            this->movements++;
-            return true;
-        }
-        else if (this->x == x)
+
+        int diff_in_x = abs(x - this->x); // Finding the difference between the x-coordinates of the current and target spot 
+        int diff_in_y = abs(y - this->y); // Finding the difference between the y-coordinates of the current and target spot
+
+        // Rook can only move :
+
+        if(diff_in_y == 0) // Either Horizontally
         {
-            if((y - this->y)>0)
+            int start_x = max(x,this->x) - 1;
+            int stop_x  = min(x,this->x);
+
+            // Ensuring that no piece is present between the current and the target spot 
+            while(start_x != stop_x)
             {
-                int temp = y - 1;
-                while((temp - this->y)>0)
-                {
-                    if(chess.chess[x][temp].c!="**")
-                        return false;
-                    temp--;
-                }
+                if(chess.chess[start_x][y].c!="**")
+                    return false;
+                start_x--;
             }
-            else if((this->y - y)>0)
-            {
-                int temp = y +1 ;
-                while((this->y - temp)>0)
-                {
-                    if(chess.chess[x][temp].c!="**")
-                        return false;
-                    temp++;
-                }
-            }
-            if(chess.chess[x][y].c[0]==chess.chess[this->x][this->y].c[0])
-                return false;
-            this->movements++;
+
+            this->movements++; // Indicates that the Rook has been displaced atleast once from its initial position 
             return true;
         }
+
+        else if(diff_in_x == 0) // Or Vertically
+        {
+            int start_y = max(y,this->y) - 1;
+            int stop_y  = min(y,this->y);
+
+            // Ensuring that no piece is present between the current and the target spot
+            while(start_y != stop_y)
+            {
+                if(chess.chess[x][start_y].c!="**")
+                    return false;
+                start_y--;
+            }
+            
+            this->movements++; // Indicates that the Rook has been displaced atleast once from its initial position
+            return true;
+        }
+
         else
             return false;
     } 
+
+    // Changing the current coordinates to that of the target spot
     void change_coordinates(int x,int y)
     {
         this->x = x;
