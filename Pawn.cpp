@@ -22,9 +22,11 @@ class pawn{
         this->change = 0;
     }
 
-    int change_piece(chessboard chess){
-        if(this->x == 8 && this->change == 0){
-            cout<<"You have the priviledge to change your piece : \nEnter \n 1. Queen \n 2. Bishop \n 3. Rook \n 4. Knight ";
+    int Promotion_of_Pawn(chessboard chess)
+    {
+        if(this->x == 8 && this->change == 0)
+        {
+            cout<<"You have the priviledge to promote your piece : \n 1. Queen \n 2. Bishop \n 3. Rook \n 4. Knight \nEnter the number corresponding to the piece :"<<endl;
             int choice;
             cin>>choice;
             this->choice = choice;
