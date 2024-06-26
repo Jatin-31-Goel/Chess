@@ -1,44 +1,57 @@
 #include<iostream>
 using namespace std;
 
+// This class will implement the chessboard and will contain the functions to implement the same.
+
 class chessboard{
     public:
+
+    // This will be implementing a single block of the chessboard
     struct block{
         string c;
     };
+
+    // This is the array which will have the game set up.
     struct block chess[9][9];
+
+    /*
+        The constructor initializes everything to the original position. All the pieces are put in place and all the empty positions are initialized.
+    */
     chessboard(){
+
+        // This loop initializes the empty spaces.
         for(int i = 1; i<9; i++){
             for(int j = 1; j<9; j++){
                 this->chess[i][j].c = "**";
             }
         }
+
+        // We put in the original pieces.
         for(int j = 1; j<9; j++){
             this->chess[7][j].c = "BP";
         }
         for(int j = 1; j<9; j++){
             this->chess[2][j].c = "WP";
         }
-        this->chess[8][1].c = "BR";
-        this->chess[8][2].c = "BN";
-        this->chess[8][3].c = "BB";
+        
+        // This initializes the original 8 black pieces.
+        this->chess[8][1].c = this->chess[8][8].c = "BR";
+        this->chess[8][2].c = this->chess[8][7].c = "BN";
+        this->chess[8][3].c = this->chess[8][6].c = "BB";
         this->chess[8][4].c = "BQ";
         this->chess[8][5].c = "BK";
-        this->chess[8][6].c = "BB";
-        this->chess[8][7].c = "BN";
-        this->chess[8][8].c = "BR";
-
-        this->chess[1][1].c = "WR";
-        this->chess[1][2].c = "WN";
-        this->chess[1][3].c = "WB";
+        
+        // This initializes the original 8 white pieces.
+        this->chess[1][1].c = this->chess[1][8].c = "WR";
+        this->chess[1][2].c = this->chess[1][7].c = "WN";
+        this->chess[1][3].c = this->chess[1][6].c = "WB";
         this->chess[1][4].c = "WQ";
         this->chess[1][5].c = "WK";
-        this->chess[1][6].c = "WB";
-        this->chess[1][7].c = "WN";
-        this->chess[1][8].c = "WR";
-
     }
 
+    /*
+        This prints the chess board.
+    */
     void print(){
         cout<<"  ";
         for(int i = 1; i<=8; i++){
@@ -54,12 +67,18 @@ class chessboard{
         }
     }
 
+    /*
+        This finalizes the change on the chess board.
+    */
     void change(int x1, int x2, int y1, int y2){
         this->chess[x2][y2].c = this->chess[x1][y1].c;
         this->chess[x1][y1].c = "**";
     }
 };
 
+/*
+    This primarily implements the class pieces. Common properties which are present with all the pieces.
+*/
 class piece{
     public:
     int x;
