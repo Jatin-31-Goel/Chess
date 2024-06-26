@@ -158,7 +158,7 @@ int main(){
                                 WP1.movements--;
                                 WP1.change_coordinates(x1, y1);
                             }
-                            temp = WP1.change_piece(chess);
+                            temp = WP1.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP1.x][WP1.y].c = "WPQ";
@@ -191,7 +191,7 @@ int main(){
                                 WP2.movements--;
                                 WP2.change_coordinates(x1, y1);
                             }
-                            temp = WP2.change_piece(chess);
+                            temp = WP2.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP2.x][WP2.y].c = "WPQ";
@@ -224,7 +224,7 @@ int main(){
                                 WP3.movements--;
                                 WP3.change_coordinates(x1, y1);
                             }
-                            temp = WP3.change_piece(chess);
+                            temp = WP3.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP3.x][WP3.y].c = "WPQ";
@@ -257,7 +257,7 @@ int main(){
                                 WP4.movements--;
                                 WP4.change_coordinates(x1, y1);
                             }
-                            temp = WP4.change_piece(chess);
+                            temp = WP4.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP4.x][WP4.y].c = "WPQ";
@@ -290,7 +290,7 @@ int main(){
                                 WP5.movements--;
                                 WP5.change_coordinates(x1, y1);
                             }
-                            temp = WP5.change_piece(chess);
+                            temp = WP5.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP5.x][WP5.y].c = "WPQ";
@@ -323,7 +323,7 @@ int main(){
                                 WP6.movements--;
                                 WP6.change_coordinates(x1, y1);
                             }
-                            temp = WP6.change_piece(chess);
+                            temp = WP6.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP6.x][WP6.y].c = "WPQ";
@@ -356,7 +356,7 @@ int main(){
                                 WP7.movements--;
                                 WP7.change_coordinates(x1, y1);
                             }
-                            temp = WP7.change_piece(chess);
+                            temp = WP7.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP7.x][WP7.y].c = "WPQ";
@@ -389,7 +389,7 @@ int main(){
                                 WP8.movements--;
                                 WP8.change_coordinates(x1, y1);
                             }
-                            temp = WP8.change_piece(chess);
+                            temp = WP8.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[WP8.x][WP8.y].c = "WPQ";
@@ -629,7 +629,7 @@ int main(){
                                 BP1.movements--;
                                 BP1.change_coordinates(x1, y1);
                             }
-                            temp = BP1.change_piece(chess);
+                            temp = BP1.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP1.x][BP1.y].c = "BPQ";
@@ -662,7 +662,7 @@ int main(){
                                 BP2.movements--;
                                 BP2.change_coordinates(x1, y1);
                             }
-                            temp = BP2.change_piece(chess);
+                            temp = BP2.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP2.x][BP2.y].c = "BPQ";
@@ -695,7 +695,7 @@ int main(){
                                 BP3.movements--;
                                 BP3.change_coordinates(x1, y1);
                             }
-                            temp = BP3.change_piece(chess);
+                            temp = BP3.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP3.x][BP3.y].c = "BPQ";
@@ -728,7 +728,7 @@ int main(){
                                 BP4.movements--;
                                 BP4.change_coordinates(x1, y1);
                             }
-                            temp = BP4.change_piece(chess);
+                            temp = BP4.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP4.x][BP4.y].c = "BPQ";
@@ -761,7 +761,7 @@ int main(){
                                 BP5.movements--;
                                 BP5.change_coordinates(x1, y1);
                             }
-                            temp = BP5.change_piece(chess);
+                            temp = BP5.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP5.x][BP5.y].c = "BPQ";
@@ -794,7 +794,7 @@ int main(){
                                 BP6.movements--;
                                 BP6.change_coordinates(x1, y1);
                             }
-                            temp = BP6.change_piece(chess);
+                            temp = BP6.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP6.x][BP6.y].c = "BPQ";
@@ -827,7 +827,7 @@ int main(){
                                 BP7.movements--;
                                 BP7.change_coordinates(x1, y1);
                             }
-                            temp = BP7.change_piece(chess);
+                            temp = BP7.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP7.x][BP7.y].c = "BPQ";
@@ -860,7 +860,7 @@ int main(){
                                 BP8.movements--;
                                 BP8.change_coordinates(x1, y1);
                             }
-                            temp = BP8.change_piece(chess);
+                            temp = BP8.Promotion_of_Pawn(chess);
                             if(temp){
                                 if(temp == 1){
                                     chess.chess[BP8.x][BP8.y].c = "BPQ";
