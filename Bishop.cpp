@@ -1,29 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class bishop: public piece {
-
+// Class for implementing the Piece Bishop which inherits some features, in public mode, from the parent class 'piece'.
+class bishop: public piece 
+{
     public:
-    bishop(char color, int x, int y) :  piece(){
-        this->color = color;
-        this->x = x;
-        this->y = y;
-        this->movements = 0;
-    }
 
-    // To check if Bishop can move to the coordinates (x,y)             
+    // Constructor for the bishop wherein common features have already been initiated by the constructor of the parent class.
+    bishop(char color, int x, int y) :  piece(color,x,y){}
+
+
+    /*
+        This Checks if the target spot is accessible by the bishop based on the below logic:
+        Bishop can only move diagonally.
+    */             
     bool is_possible_bishop(int x,int y,chessboard chess)
     {
         // Ensuring that target spot (x,y) does not have the same color piece
         if(chess.chess[x][y].c[0] == chess.chess[this->x][this->y].c[0])
             return false;
         
-        int diff_in_x = abs(x - this->x); // Finding the difference between the x-coordinates of the current and target spot 
-        int diff_in_y = abs(y - this->y); // Finding the difference between the y-coordinates of the current and target spot
+        int diff_in_x = abs(x - this->x); // The absolute difference between the x-coordinates of the current and target spot 
+        int diff_in_y = abs(y - this->y); // The absolute difference between the y-coordinates of the current and target spot
 
-        // Bishop can only move diagonally 
-
-        if(diff_in_x != diff_in_y) // No. of steps in x-direction should be same in the y-direction
+        if(diff_in_x != diff_in_y) // Ensuring if it is a diagonal movement i.e. no. of steps in x-direction should be same in the y-direction
            return false;
         
         int max_x = max(x,this->x);
@@ -31,7 +31,7 @@ class bishop: public piece {
         int min_x = min(x,this->x);
         int min_y = min(y,this->y);
 
-        if((max_x == x && max_y == y)||(max_x == this->x && max_y == this->y)) // Target spot is either in 1st or 3rd Quadrant
+        if((max_x == x && max_y == y)||(max_x == this->x && max_y == this->y)) // Target spot is either in 1st or 3rd Quadrant w.r.t current position
         {
             int start_x = max_x - 1;
             int start_y = max_y - 1;
@@ -47,7 +47,7 @@ class bishop: public piece {
             }
         }
 
-        else if((max_x == x && min_y == y)||(max_x == this->x && min_y == this->y)) // Target spot is either in 2nd or 4th Quadrant
+        else if((max_x == x && min_y == y)||(max_x == this->x && min_y == this->y)) // Target spot is either in 2nd or 4th Quadrant w.r.t current position
         {
             int start_x = max_x - 1;
             int start_y = min_y + 1;
@@ -67,7 +67,7 @@ class bishop: public piece {
         return true;
     }
 
-    // Changing the current coordinates to that of the target spot
+    // Whenever the bishop has moved we call this function to change the internal x and y co-ordinate of the bishop.
     void change_coordinates(int x,int y)
     {
         this->x = x;
