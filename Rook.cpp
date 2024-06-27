@@ -14,7 +14,7 @@ class rook: public piece
         This Checks if the target spot is accessible by the rook based on the below logic:
         Rook can only move either horizontally or vertically straight.
     */
-    bool is_possible_rook(int x,int y,chessboard chess)
+    bool is_possible(int x,int y,chessboard chess)
     {
         // Ensuring that target spot (x,y) does not have the same color piece
         if(chess.chess[x][y].c[0] == chess.chess[this->x][this->y].c[0])
