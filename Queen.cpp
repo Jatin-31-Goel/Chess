@@ -1,48 +1,43 @@
 #include<iostream>
 using namespace std;
 
-/*
-    * The moves of a queen are a combinations of that of a rook and a bishop.
-    * So the queen peice can be implemented checking both for movements of a rook and a bishop.
-    * If any of both is true then we return true for the possibility of the piece.
-*/
-
-class queen :public rook, public bishop{
+// Class for implementing the Piece Queen which inherits some features, in public mode, from the parent class 'rook' and 'bishop'.
+class queen :public rook, public bishop
+{
     public:
-    int x_q;                    // The x - coordinate of the queen
-    int y_q;                    // The y - coordinate of the queen
-    char color_q;               // The color of the piece of the queen
-    int movements_q;            // The number of moves that this piece has moved
-
     /*
-        * Constructor of the queen
-        * The constructors for the rook and bishop are also called as they are inherited
-        * The original conditions for the piece are.
-    */ 
-    queen (char color, int x, int y) : rook(color, x, y), bishop(color, x, y){
-        this->color_q = color;
-        this->x_q = x;
-        this->y_q = y;
-        this->movements_q = 0;
-    }
+        Constructor for the Queen :
+        As the queen will follow the movements of a rook or a bishop only, so we call the constructors of their parent classes inorder to change 
+        the x and y coordinates of them.
+    */
+    queen (char color, int x, int y) : rook(color, x, y), bishop(color, x, y){}
 
-    // The function to check the moves for the queen. We check if either a bishop or a rook can take the path and the return true.
+    
+    /*
+        This Checks if the target spot is accessible by the queen based on the below logic:
+        Queen can only move :
+            1) Either horizontally or vertically straight like Rook.
+            2) Diagonally like Bishop
+    */
     bool is_possible(int x,int y,chessboard chess)
     {
-        if(is_possible_rook(x,y, chess) || is_possible_bishop(x, y, chess)){
+        // Scope Resolution(::) indicates the working of that particular property of the parent class 
+        if(rook::is_possible(x,y, chess) || bishop::is_possible(x, y, chess)) // This checks for the rook or bishop type movements 
             return true;
-        }
-        return false;
+
+        return false; // All the possible cases have already been encountered above.
     } 
 
-    // The function to change the coordinates of the piece.
+    
+    /*
+        Whenever the Queen has moved we call this function to change the internal x and y co-ordinate of its parent classes so that next time 
+        when the is_possible function is called, it will have the updated coordinates.
+    */
     void change_coordinates(int x,int y)
     {   
-        this->rook::x = x;
+        this->rook::x = x;     
         this->rook::y = y;
         this->bishop:: x = x;
         this->bishop::y = y;
-        this->x_q = x;
-        this->y_q = y;
     }
 };
