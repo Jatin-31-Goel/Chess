@@ -70,8 +70,8 @@ class chessboard{
 };
 
 /*
-    This primarily implements the class 'piece' containing the common properties which will be present with all other chess pieces.
-    It will be inherited to all other pieces.
+    This primarily implements the Abstract class 'piece' containing the common properties which will be present with all other chess pieces.
+    It will be inherited to all other pieces except the virtual functions, which should be implemented individually in each child class .
 */
 class piece{
     public:
@@ -88,5 +88,12 @@ class piece{
         this->y = y;           // We initiate the original position of a piece in the beginning (y).
         this->movements = 0;   // On initiation no move has been done by a piece
     }
+
+    /*
+        Implementing Virtual Functions, that should be present in all the child classes. They does not perform any function in the parent class 
+        but acts as a prototye for the child classes.  
+    */
+    virtual bool is_possible(int x,int y,chessboard chess) = 0;
+    virtual void change_coordinates(int x,int y) = 0;
 };
 
