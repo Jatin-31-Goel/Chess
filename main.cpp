@@ -5,14 +5,14 @@
 using namespace std;
 
 int main(){
-     cout<<" Enter the name of first player : "<<endl;;
-     string name1;
-     cin>>name1;
-     cout<<" Enter the name of second player : "<<endl;
-     string name2 ;
-     cin>>name2;
-    cout<<"Lets the game begin"<<endl;
-    cout<<name1 << " "<<"vs"<<" "<<name2<<endl;
+    cout<<" Enter the name of first player : ";
+    string name1;
+    cin>>name1;
+    cout<<" \nEnter the name of second player : ";
+    string name2 ;
+    cin>>name2;
+    cout<<"\nLets the game begin"<<endl;
+    cout<<endl<<name1 << " "<<"vs"<<" "<<name2<<endl<<endl;;
     chessboard chess;
     chess.print();
     int turn = 0;
@@ -44,7 +44,7 @@ int main(){
             switch(chess.chess[x1][y1].c[1]){
                 case 'R' : {
                     if(WR1.x == x1 && WR1.y == y1){
-                        if(WR1.is_possible_rook(x2, y2, chess)){
+                        if(WR1.is_possible(x2, y2, chess)){
                             WR1.movements++;
                             WR1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
@@ -60,7 +60,7 @@ int main(){
                         }
                     }
                     else if(WR2.x == x1 && WR2.y == y1){
-                        if(WR2.is_possible_rook(x2, y2, chess)){
+                        if(WR2.is_possible(x2, y2, chess)){
                             WR2.movements++;
                             WR2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
@@ -121,7 +121,7 @@ int main(){
                 case 'B' : 
                 {
                     if(WB1.x == x1 && WB1.y == y1){
-                        if(WB1.is_possible_bishop(x2, y2, chess)){
+                        if(WB1.is_possible(x2, y2, chess)){
                             WB1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
@@ -133,7 +133,7 @@ int main(){
                         }
                     }
                     else if(WB2.x == x1 && WB2.y == y1){
-                        if(WB2.is_possible_bishop(x2, y2, chess)){
+                        if(WB2.is_possible(x2, y2, chess)){
                             WB2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!WK.is_legal( WK.x, WK.y, chess))
@@ -515,7 +515,7 @@ int main(){
             switch(chess.chess[x1][y1].c[1]){
                 case 'R' : {
                     if(BR1.x == x1 && BR1.y == y1){
-                        if(BR1.is_possible_rook(x2, y2, chess)){
+                        if(BR1.is_possible(x2, y2, chess)){
                             BR1.movements++;
                             BR1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
@@ -531,7 +531,7 @@ int main(){
                         }
                     }
                     else if(BR2.x == x1 && BR2.y == y1){
-                        if(BR2.is_possible_rook(x2, y2, chess)){
+                        if(BR2.is_possible(x2, y2, chess)){
                             BR2.movements++;
                             BR2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
@@ -592,7 +592,7 @@ int main(){
                 case 'B' : 
                 {
                     if(BB1.x == x1 && BB1.y == y1){
-                        if(BB1.is_possible_bishop(x2, y2, chess)){
+                        if(BB1.is_possible(x2, y2, chess)){
                             BB1.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!BK.is_legal( BK.x, BK.y, chess))
@@ -604,7 +604,7 @@ int main(){
                         }
                     }
                     else if(BB2.x == x1 && BB2.y == y1){
-                        if(BB2.is_possible_bishop(x2, y2, chess)){
+                        if(BB2.is_possible(x2, y2, chess)){
                             BB2.change_coordinates(x2, y2);
                             chess.change(x1, x2, y1 , y2);
                             if(!BK.is_legal( BK.x, BK.y, chess))
