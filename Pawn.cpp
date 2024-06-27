@@ -52,12 +52,12 @@ class pawn : public piece
 
                 case 2 : {
                     bishop temp(this->color, this->x, this->y);
-                    return temp.is_possible_bishop(x, y, chess);
+                    return temp.is_possible(x, y, chess);
                 }
 
                 case 3 : {
                     rook temp(this->color, this->x, this->y);
-                    return temp.is_possible_rook(x, y, chess);
+                    return temp.is_possible(x, y, chess);
                 }
 
                 case 4 : {
