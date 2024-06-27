@@ -14,6 +14,11 @@ class king : public piece
         This Checks if the target spot is accessible by the king based on the below logic:
         King can only move one step in any direction.
     */
+    /*
+        As the piece class has been inherited in the king, inorder to satisfy the virtual function, we have implemented the same 
+        in the child class. Its a function overloading case : Function with the same name in the same class with different parameters. 
+    */
+    bool is_possible(int x,int y, chessboard chess){}
     bool is_possible(int x, int y, chessboard chess, int k)
     {
         // Ensuring that target spot (x,y) does not have the same color piece
