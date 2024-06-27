@@ -1,39 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Class for implementing the Piece King.
-class king
+// Class for implementing the Piece King which inherits some features, in public mode, from the parent class 'piece'.
+class king : public piece
 {
-public:
-    int x;         // This keeps the track of the current x coordinate of King
-    int y;         // This keeps the track of the current y coordinate of King
-    char color;    // This stores 'W' or 'B' depending on the color of the king.
-    int movements; // Keeps track of how many moves has been done by this piece.
+    public:
+    
+    // Constructor for the king wherein common features already been initiated by the constructor of the parent class.
+    king(char color, int x, int y) : piece(color,x,y){}
 
-    // Constructor for the piece of the king.
-    king(char color, int x, int y)
-    {
-        this->color = color; // We pass the color of the piece.
-        this->x = x;         // We initiate the original position of the king in the beginning (x).
-        this->y = y;         // We initiate the original position of the king in the beginning (y).
-        this->movements = 0; // Initially 0 moves have been done by King's piece
-    }
 
-    // This Checks if the place where we want the king to move is accessible
     /*
-        Logic:
-            ** A king can move in any direction but the only condition is that it can only move 1 step.
-            ** Hence we use this logic to check the validity of a move.
+        This Checks if the target spot is accessible by the king based on the below logic:
+        King can only move one step in any direction.
     */
-
     bool is_possible(int x, int y, chessboard chess, int k)
     {
-        int temp1 = abs(x - this->x); // The absolute difference between new x-coordinate and original x-coordinate
-        int temp2 = abs(y - this->y); // The absolute difference between new y-coordinate and original y-coordinate
+        // Ensuring that target spot (x,y) does not have the same color piece
+        if(chess.chess[x][y].c[0] == chess.chess[this->x][this->y].c[0])
+            return false;
+
+        int diff_in_x = abs(x - this->x); // The absolute difference between x-coordinates of the current and target spot
+        int diff_in_y = abs(y - this->y); // The absolute difference between y-coordinates of the current and target spot
+
 
         /*
-            This checks for castling. The current position of the king is unmoved and we are trying to
-            move it in place of rook.
+            This checks for castling which is possible only when :
+            The king and rook are present at their initial positions and are unmoved as well. Moreover no piece should be present between both of them.
         */
         if ((this->x == 1 || this->x == 8) && this->y == 5 && this->movements == 0 && (x == 1 || x == 8) && y == 7 && k == 0)
         {
@@ -41,21 +34,12 @@ public:
                 return true;
         }
 
-        // If this isn't the case we check if the difference in the coordinates is less than or equal to 1
-        // And both of the differences aren't 0 (case of no motion.)
+        // Ensuring that if it is either horizontal, vertical or diagonal one step movement
+        else if ((diff_in_x <= 1 && diff_in_y <= 1))
+            return true;
 
-        else if ((temp1 <= 1 && temp2 <= 1) && !(temp1 == 0 && temp2 == 0))
-        {
-            // This ensures that the place where the king wants to go doesn't have a piece of same color.
-            if ((chess.chess[x][y].c[0] != chess.chess[this->x][this->y].c[0]))
-                return true;
-
-            // If there is piece of same color then it returns a false.
-            return false;
-        }
-
-        // In all the other cases we return a false.
-        return false;
+        else
+            return false; // All the possible cases have already been encountered above.
     }
 
     // This checks for illegal moves pertaining to king.
@@ -295,7 +279,7 @@ public:
     }
 
 
-    // Whenever the king has moved we call this function to finalize the movement and change the internal x and y co-ordinate of the king.
+    // Whenever the king has moved we call this function to change the internal x and y co-ordinate of the king.
     void change_coordinates(int x, int y)
     {
         this->x = x;
