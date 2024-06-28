@@ -29,6 +29,7 @@ To run this chess game on your local machine, follow these steps:
 1. Clone the repository
    '''
     git clone https://github.com/Jatin-31-Goel/Chess.git
+   
    '''
 3. Navigate to the project directory:    
     cd Chess
@@ -47,13 +48,13 @@ After compiling and running the game, you can play chess directly in your consol
 # **File Descriptions**
 
 - `main.cpp`: Contains the main function and the game loop.
-- `Bishop.cpp` and `Bishop.h`: Contains the implementation of the Bishop piece.
-- `Knight.cpp` and `Knight.h`: Contains the implementation of the Knight piece.
-- `Rook.cpp` and `Rook.h`: Contains the implementation of the Rook piece.
-- `Queen.cpp` and `Queen.h`: Contains the implementation of the Queen piece, which inherits from Rook and Bishop.
-- `Pawn.cpp` and `Pawn.h`: Contains the implementation of the Pawn piece.
-- `King.cpp` and `King.h`: Contains the implementation of the King piece.
-- `Chessboard.cpp` and `Chessboard.h`: Contains the implementation of the Chessboard class, which manages the game state and pieces.
+- `Bishop.cpp` : Contains the implementation of the Bishop piece.
+- `Knight.cpp`: Contains the implementation of the Knight piece.
+- `Rook.cpp` : Contains the implementation of the Rook piece.
+- `Queen.cpp` : Contains the implementation of the Queen piece, which inherits from Rook and Bishop.
+- `Pawn.cpp` : Contains the implementation of the Pawn piece.
+- `King.cpp`: Contains the implementation of the King piece.
+- `Chessboard.cpp`: Contains the implementation of the Chessboard class, which manages the game state and pieces.
 
 # **Contributors**
 
