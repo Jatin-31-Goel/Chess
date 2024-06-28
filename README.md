@@ -27,6 +27,7 @@ OOP has several key principles:
 **Inheritance:** This principle allows new classes to inherit properties and methods from existing classes. In our project, the Queen class inherits from both the Rook and Bishop classes, reusing and extending their functionalities.
 
 **Polymorphism:** This principle allows objects of different classes to be treated as objects of a common superclass. It is most often used with inheritance. For instance, all chess pieces are treated as a type of base class Piece, allowing for a unified way to handle different pieces.
+
 By leveraging OOP, our chess game is organized, modular, and easier to maintain and extend. Each class represents a different piece or part of the game, making the code more readable and manageable.
 # **Features**
 
@@ -41,9 +42,9 @@ To run this chess game on your local machine, follow these steps:
 1. Clone the repository
     git clone https://github.com/Jatin-31-Goel/Chess.git
 
-2. Navigate to the project directory:
-    
+2. Navigate to the project directory:    
     cd Chess
+
 3. Compile the code using a C++ compiler, for example:
     
 g++ main.cpp Bishop.cpp Knight.cpp Rook.cpp Queen.cpp Pawn.cpp King.cpp Chessboard.cpp -o chessgame
