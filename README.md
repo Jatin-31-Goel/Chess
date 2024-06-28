@@ -16,19 +16,6 @@ Welcome to our Chess Game project! This game is built using Object-Oriented Prog
 
 This project is a C++ implementation of the classic game of Chess. The game includes all standard chess pieces and follows the traditional rules of chess. It is designed to be run in a console environment.
 
-# **Object-Oriented Programming (OOP)**
-Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code. Data is in the form of fields (often known as attributes or properties), and code is in the form of procedures (often known as methods).
-OOP has several key principles:
-
-**Encapsulation:** This principle states that all important information is contained inside an object and only select information is exposed. In our chess game, each piece (like a bishop, knight, or rook) is an object that contains its own properties and methods.
-
-**Abstraction:** This principle involves hiding complex implementation details and showing only the necessary features of an object. For example, the movement of each piece is abstracted into methods that are easy to use without knowing the underlying complexity.
-
-**Inheritance:** This principle allows new classes to inherit properties and methods from existing classes. In our project, the Queen class inherits from both the Rook and Bishop classes, reusing and extending their functionalities.
-
-**Polymorphism:** This principle allows objects of different classes to be treated as objects of a common superclass. It is most often used with inheritance. For instance, all chess pieces are treated as a type of base class Piece, allowing for a unified way to handle different pieces.
-
-By leveraging OOP, our chess game is organized, modular, and easier to maintain and extend. Each class represents a different piece or part of the game, making the code more readable and manageable.
 # **Features**
 
 - Full implementation of standard chess rules.
