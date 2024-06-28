@@ -1,4 +1,4 @@
-# Header 1 (**Chess Game**)
+# (**Chess Game**)
 
 Welcome to our Chess Game project! This game is built using Object-Oriented Programming (OOP) principles in C++.
 
