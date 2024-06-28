@@ -66,44 +66,43 @@ class king : public piece
         // Temp variable helps us check in horizontal and vertical directions.
 
         int temp = x - 1;
-        // We move in left direction in this case.
+        // We move in vertically downward direction in this case.
         while (temp >= 1)
         {
-
             // If we find a piece of same color we break the loop as there is no danger from this direction.
             if (chess.chess[temp][y].c[0] == chess.chess[x][y].c[0])
                 break;
 
-            // If we find the piece of different color we check if the piece can be used to kill the king.
-            else if (chess.chess[temp][y].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            // If we do not find an empty space means there will be presence of opponents piece, we check if the piece can be used to kill the king.
+            else if (chess.chess[temp][y].c != "**")
             {
 
-                // If it is a 'R' or 'Q' then since they can move any number of steps we return a false right away.
+                // If it is a 'R' or 'Q' then since they can move any number of steps vertically we return a false right away.
                 if (chess.chess[temp][y].c[1] == 'R' || chess.chess[temp][y].c[1] == 'Q')
                     return false;
                 // For 'K' we check if the king is only 1 step away.
-                else if (chess.chess[temp][y].c[1] == 'K' && abs(temp - x) == 1)
+                else if (chess.chess[temp][y].c[1] == 'K' && (x - temp == 1))
                     return false;
 
-                // If it is none then we break the loop and declare the mood to be valid.
+                // If it is none of the above pieces then we break the loop and declare the move to be valid.
                 else
                     break;
             }
             temp--;
         }
 
-        // We move in right direction in this case.
+        // We move in vertically upward direction in this case.
         temp = x + 1;
         while (temp <= 8)
         {
 
             if (chess.chess[temp][y].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if (chess.chess[temp][y].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            else if (chess.chess[temp][y].c != "**")
             {
                 if (chess.chess[temp][y].c[1] == 'R' || chess.chess[temp][y].c[1] == 'Q')
                     return false;
-                else if (chess.chess[temp][y].c[1] == 'K' && abs(temp - x) == 1)
+                else if (chess.chess[temp][y].c[1] == 'K' && (temp - x == 1))
                     return false;
                 else
                     break;
@@ -111,18 +110,18 @@ class king : public piece
             temp++;
         }
 
-        //  We similarly check for the upward direction.
+        //  We similarly check for the horizontally left direction.
         temp = y - 1;
         while (temp >= 1)
         {
 
             if (chess.chess[x][temp].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if (chess.chess[x][temp].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            else if (chess.chess[x][temp].c != "**")
             {
                 if (chess.chess[x][temp].c[1] == 'R' || chess.chess[x][temp].c[1] == 'Q')
                     return false;
-                else if (chess.chess[x][temp].c[1] == 'K' && abs(temp - y) == 1)
+                else if (chess.chess[x][temp].c[1] == 'K' && (y - temp == 1))
                     return false;
                 else
                     break;
@@ -130,18 +129,18 @@ class king : public piece
             temp--;
         }
 
-        // We check for downward direction.
+        // We check for horizontally right direction.
         temp = y + 1;
         while (temp <= 8)
         {
 
             if (chess.chess[x][temp].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if (chess.chess[x][temp].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp][y].c == "**"))
+            else if (chess.chess[x][temp].c != "**")
             {
                 if (chess.chess[x][temp].c[1] == 'R' || chess.chess[x][temp].c[1] == 'Q')
                     return false;
-                else if (chess.chess[x][temp].c[1] == 'K' && abs(temp - y) == 1)
+                else if (chess.chess[x][temp].c[1] == 'K' && (temp - y == 1))
                     return false;
                 else
                     break;
@@ -149,7 +148,7 @@ class king : public piece
             temp++;
         }
 
-        // We move in the direction of the third co-ordinate.
+        // We move in the direction of the third quadrant.
         int temp1 = x - 1;
         int temp2 = y - 1;
         while (temp1 >= 1 && temp2 >= 1)
@@ -158,14 +157,14 @@ class king : public piece
             if (chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
 
-            // If we find a piece of different color we check for other conditions.
-            else if (chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
+            // If we do not find an empty space means there will be presence of opponents piece, we check if the piece can be used to kill the king.
+            else if (chess.chess[temp1][temp2].c != "**")
             {
-                // If we find a 'B' (Bishop) or a 'Q' then we return false right away.
+                // If it is a 'B' or 'Q' then since they can move any number of steps diagonally we return a false right away.
                 if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
                     return false;
-                // For the king we check if the number of steps are valid or not (1)
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (x - temp1) == 1 && (y - temp2) == 1)
+                // For the king and the pawn we check if the number of steps are valid or not (1)
+                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (x - temp1 == 1) && (y - temp2 == 1))
                     return false;
                 else
                     break;
@@ -174,18 +173,18 @@ class king : public piece
             temp2--;
         }
 
-        // Checking in first quadrant
+        // We move in the direction of the first quadrant.
         temp1 = x + 1;
         temp2 = y + 1;
         while (temp1 <= 8 && temp2 <= 8)
         {
             if (chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if (chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
+            else if (chess.chess[temp1][temp2].c != "**")
             {
                 if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
                     return false;
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (temp1 - x) == 1 && (temp2 - y) == 1)
+                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (temp1 - x == 1) && (temp2 - y == 1))
                     return false;
                 else
                     break;
@@ -194,18 +193,18 @@ class king : public piece
             temp2++;
         }
 
-        // Checking in second quadrant
+        // Checking in fourth quadrant
         temp1 = x - 1;
         temp2 = y + 1;
         while (temp1 >= 1 && temp2 <= 8)
         {
             if (chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if (chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
+            else if (chess.chess[temp1][temp2].c != "**")
             {
                 if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
                     return false;
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (x - temp1) == 1 && (temp2 - y) == 1)
+                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (x - temp1 == 1) && (temp2 - y == 1))
                     return false;
                 else
                     break;
@@ -214,7 +213,7 @@ class king : public piece
             temp2++;
         }
 
-        // Checking in fourth quadrant
+        // Checking in second quadrant
         temp1 = x + 1;
         temp2 = y - 1;
         while (temp1 <= 8 && temp2 >= 1)
@@ -222,11 +221,11 @@ class king : public piece
 
             if (chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
-            else if (chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0] && !(chess.chess[temp1][temp2].c == "**"))
+            else if (chess.chess[temp1][temp2].c != "**")
             {
                 if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
                     return false;
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (temp1 - x) == 1 && (y - temp2) == 1)
+                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (temp1 - x == 1) && (y - temp2 == 1))
                     return false;
                 else
                     break;
@@ -280,6 +279,8 @@ class king : public piece
         if (temp1 >= 1 && temp2 <= 8)
             if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
                 return false;
+
+        // All the Rejection cases have already been encountered above 
         return true;
     }
 
