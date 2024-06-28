@@ -76,12 +76,13 @@ class king : public piece
             // If we do not find an empty space means there will be presence of opponents piece, we check if the piece can be used to kill the king.
             else if (chess.chess[temp][y].c != "**")
             {
+                int len = (chess.chess[temp][y].c).length();
 
                 // If it is a 'R' or 'Q' then since they can move any number of steps vertically we return a false right away.
-                if (chess.chess[temp][y].c[1] == 'R' || chess.chess[temp][y].c[1] == 'Q')
+                if (chess.chess[temp][y].c[len-1] == 'R' || chess.chess[temp][y].c[len-1] == 'Q')
                     return false;
                 // For 'K' we check if the king is only 1 step away.
-                else if (chess.chess[temp][y].c[1] == 'K' && (x - temp == 1))
+                else if (chess.chess[temp][y].c[len-1] == 'K' && (x - temp == 1))
                     return false;
 
                 // If it is none of the above pieces then we break the loop and declare the move to be valid.
@@ -100,9 +101,10 @@ class king : public piece
                 break;
             else if (chess.chess[temp][y].c != "**")
             {
-                if (chess.chess[temp][y].c[1] == 'R' || chess.chess[temp][y].c[1] == 'Q')
+                int len = (chess.chess[temp][y].c).length();
+                if (chess.chess[temp][y].c[len-1] == 'R' || chess.chess[temp][y].c[len-1] == 'Q')
                     return false;
-                else if (chess.chess[temp][y].c[1] == 'K' && (temp - x == 1))
+                else if (chess.chess[temp][y].c[len-1] == 'K' && (temp - x == 1))
                     return false;
                 else
                     break;
@@ -119,9 +121,10 @@ class king : public piece
                 break;
             else if (chess.chess[x][temp].c != "**")
             {
-                if (chess.chess[x][temp].c[1] == 'R' || chess.chess[x][temp].c[1] == 'Q')
+                int len = (chess.chess[x][temp].c).length();
+                if (chess.chess[x][temp].c[len-1] == 'R' || chess.chess[x][temp].c[len-1] == 'Q')
                     return false;
-                else if (chess.chess[x][temp].c[1] == 'K' && (y - temp == 1))
+                else if (chess.chess[x][temp].c[len-1] == 'K' && (y - temp == 1))
                     return false;
                 else
                     break;
@@ -133,14 +136,14 @@ class king : public piece
         temp = y + 1;
         while (temp <= 8)
         {
-
             if (chess.chess[x][temp].c[0] == chess.chess[x][y].c[0])
                 break;
             else if (chess.chess[x][temp].c != "**")
             {
-                if (chess.chess[x][temp].c[1] == 'R' || chess.chess[x][temp].c[1] == 'Q')
+                int len = (chess.chess[x][temp].c).length();
+                if (chess.chess[x][temp].c[len-1] == 'R' || chess.chess[x][temp].c[len-1] == 'Q')
                     return false;
-                else if (chess.chess[x][temp].c[1] == 'K' && (temp - y == 1))
+                else if (chess.chess[x][temp].c[len-1] == 'K' && (temp - y == 1))
                     return false;
                 else
                     break;
@@ -160,11 +163,12 @@ class king : public piece
             // If we do not find an empty space means there will be presence of opponents piece, we check if the piece can be used to kill the king.
             else if (chess.chess[temp1][temp2].c != "**")
             {
+                int len = (chess.chess[temp1][temp2].c).length();
                 // If it is a 'B' or 'Q' then since they can move any number of steps diagonally we return a false right away.
-                if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
+                if (chess.chess[temp1][temp2].c[len-1] == 'B' || chess.chess[temp1][temp2].c[len-1] == 'Q')
                     return false;
                 // For the king and the pawn we check if the number of steps are valid or not (1)
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (x - temp1 == 1) && (y - temp2 == 1))
+                else if ((chess.chess[temp1][temp2].c[len-1] == 'K' || (chess.chess[temp1][temp2].c[len-1] == 'P' && chess.chess[temp1][temp2].c[0] == 'W')) && (x - temp1 == 1) && (y - temp2 == 1))
                     return false;
                 else
                     break;
@@ -182,9 +186,10 @@ class king : public piece
                 break;
             else if (chess.chess[temp1][temp2].c != "**")
             {
-                if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
+                int len = (chess.chess[temp1][temp2].c).length();
+                if (chess.chess[temp1][temp2].c[len-1] == 'B' || chess.chess[temp1][temp2].c[len-1] == 'Q')
                     return false;
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (temp1 - x == 1) && (temp2 - y == 1))
+                else if ((chess.chess[temp1][temp2].c[len-1] == 'K' || (chess.chess[temp1][temp2].c[len-1] == 'P' && chess.chess[temp1][temp2].c[0] == 'B')) && (temp1 - x == 1) && (temp2 - y == 1))
                     return false;
                 else
                     break;
@@ -202,9 +207,10 @@ class king : public piece
                 break;
             else if (chess.chess[temp1][temp2].c != "**")
             {
-                if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
+                int len = (chess.chess[temp1][temp2].c).length();
+                if (chess.chess[temp1][temp2].c[len-1] == 'B' || chess.chess[temp1][temp2].c[len-1] == 'Q')
                     return false;
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (x - temp1 == 1) && (temp2 - y == 1))
+                else if ((chess.chess[temp1][temp2].c[len-1] == 'K' || (chess.chess[temp1][temp2].c[len-1] == 'P' && chess.chess[temp1][temp2].c[0] == 'W')) && (x - temp1 == 1) && (temp2 - y == 1))
                     return false;
                 else
                     break;
@@ -218,14 +224,14 @@ class king : public piece
         temp2 = y - 1;
         while (temp1 <= 8 && temp2 >= 1)
         {
-
             if (chess.chess[temp1][temp2].c[0] == chess.chess[x][y].c[0])
                 break;
             else if (chess.chess[temp1][temp2].c != "**")
             {
-                if (chess.chess[temp1][temp2].c[1] == 'B' || chess.chess[temp1][temp2].c[1] == 'Q')
+                int len = (chess.chess[temp1][temp2].c).length();
+                if (chess.chess[temp1][temp2].c[len-1] == 'B' || chess.chess[temp1][temp2].c[len-1] == 'Q')
                     return false;
-                else if ((chess.chess[temp1][temp2].c[1] == 'K' || chess.chess[temp1][temp2].c[1] == 'P') && (temp1 - x == 1) && (y - temp2 == 1))
+                else if ((chess.chess[temp1][temp2].c[len-1] == 'K' || (chess.chess[temp1][temp2].c[len-1] == 'P' && chess.chess[temp1][temp2].c[0] == 'B')) && (temp1 - x == 1) && (y - temp2 == 1))
                     return false;
                 else
                     break;
@@ -241,43 +247,51 @@ class king : public piece
         */
         temp1 = x + 1;
         temp2 = y + 2;
+        int len = (chess.chess[temp1][temp2].c).length();
         if (temp1 <= 8 && temp2 <= 8)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x - 1;
         temp2 = y - 2;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 >= 1 && temp2 >= 1)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x + 1;
         temp2 = y - 2;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 <= 8 && temp2 >= 1)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x - 1;
         temp2 = y + 2;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 >= 1 && temp2 <= 8)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x + 2;
         temp2 = y + 1;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 <= 8 && temp2 <= 8)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x - 2;
         temp2 = y - 1;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 >= 1 && temp2 >= 1)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x + 2;
         temp2 = y - 1;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 <= 8 && temp2 >= 1)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
         temp1 = x - 2;
         temp2 = y + 1;
+        len = (chess.chess[temp1][temp2].c).length();
         if (temp1 >= 1 && temp2 <= 8)
-            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[1] == 'N')
+            if ((chess.chess[temp1][temp2].c[0] != chess.chess[x][y].c[0]) && chess.chess[temp1][temp2].c[len-1] == 'N')
                 return false;
 
         // All the Rejection cases have already been encountered above 
