@@ -47,7 +47,7 @@ To run this chess game on your local machine, follow these steps:
 
 3. Compile the code using a C++ compiler, for example:
     
-g++ main.cpp Bishop.cpp Knight.cpp Rook.cpp Queen.cpp Pawn.cpp King.cpp Chessboard.cpp -o chessgame
+g++ main.cpp 
 
 4. Run the compiled program:
    ./chessgame
