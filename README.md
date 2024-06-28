@@ -1,8 +1,8 @@
-Chess Game
+**Chess Game**
 
 Welcome to our Chess Game project! This game is built using Object-Oriented Programming (OOP) principles in C++.
 
-Table of Contents
+**Table of Contents**
 
 - Introduction
 - Features
@@ -12,10 +12,10 @@ Table of Contents
 - Contributors
 - License
 
-Introduction
+**Introduction**
 
 This project is a C++ implementation of the classic game of Chess. The game includes all standard chess pieces and follows the traditional rules of chess. It is designed to be run in a console environment.
-Object-Oriented Programming (OOP)
+**Object-Oriented Programming (OOP)**
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code. Data is in the form of fields (often known as attributes or properties), and code is in the form of procedures (often known as methods).
 OOP has several key principles:
 Encapsulation: This principle states that all important information is contained inside an object and only select information is exposed. In our chess game, each piece (like a bishop, knight, or rook) is an object that contains its own properties and methods.
@@ -29,7 +29,7 @@ Features
 - Object-oriented design with separate classes for each type of piece.
 - Simple and clean code structure.
 
-Installation
+**Installation**
 
 To run this chess game on your local machine, follow these steps:
 
@@ -46,11 +46,11 @@ g++ main.cpp Bishop.cpp Knight.cpp Rook.cpp Queen.cpp Pawn.cpp King.cpp Chessboa
 4. Run the compiled program:
    ./chessgame
 
-Usage
+**Usage**
 
 After compiling and running the game, you can play chess directly in your console. The game will prompt you to make moves by entering the coordinates of the pieces.
 
-File Descriptions
+**File Descriptions**
 
 - `main.cpp`: Contains the main function and the game loop.
 - `Bishop.cpp` and `Bishop.h`: Contains the implementation of the Bishop piece.
@@ -61,11 +61,11 @@ File Descriptions
 - `King.cpp` and `King.h`: Contains the implementation of the King piece.
 - `Chessboard.cpp` and `Chessboard.h`: Contains the implementation of the Chessboard class, which manages the game state and pieces.
 
-Contributors
+**Contributors**
 
-- [Your Name](https://github.com/yourusername)
-- [Team Member 1](https://github.com/member1)
-- [Team Member 2](https://github.com/member2)
+- [Piyush Kumar](https://github.com/Piyushkumar2004)
+- [Jatin Goel](https://github.com/member1)
+- [Pranav Menon](https://github.com/member2)
 
 License
 
