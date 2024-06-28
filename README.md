@@ -1,4 +1,4 @@
-**Chess Game**
+#**Chess Game**
 
 Welcome to our Chess Game project! This game is built using Object-Oriented Programming (OOP) principles in C++.
 
@@ -15,6 +15,7 @@ Welcome to our Chess Game project! This game is built using Object-Oriented Prog
 **Introduction**
 
 This project is a C++ implementation of the classic game of Chess. The game includes all standard chess pieces and follows the traditional rules of chess. It is designed to be run in a console environment.
+
 **Object-Oriented Programming (OOP)**
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code. Data is in the form of fields (often known as attributes or properties), and code is in the form of procedures (often known as methods).
 OOP has several key principles:
