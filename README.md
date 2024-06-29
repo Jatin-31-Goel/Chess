@@ -27,20 +27,22 @@ This project is a C++ implementation of the classic game of Chess. The game incl
 To run this chess game on your local machine, follow these steps:
 
 1. Clone the repository
-   '''
+   ```
     git clone https://github.com/Jatin-31-Goel/Chess.git
-   
-   '''
-3. Navigate to the project directory:    
+   ```
+3. Navigate to the project directory:
+   ``` 
     cd Chess
-
-4. Compile the code using a C++ compiler, for example:
-    
-g++ main.cpp 
+   ```
+5. Compile the code using a C++ compiler, for example:
+ ```   
+   g++ main.cpp 
+```
 
 4. Run the compiled program:
+   ```
    ./chessgame
-
+   ```
 # **Usage**
 
 After compiling and running the game, you can play chess directly in your console. The game will prompt you to make moves by entering the coordinates of the pieces.
