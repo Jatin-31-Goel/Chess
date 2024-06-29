@@ -52,7 +52,7 @@ After compiling and running the game, you can play chess directly in your consol
 
 # **Reference for usage in git in windows**
 
-![Screenshot 2024-06-29 180614](Screenshot%202024-06-29%20151744.png)
+![Screenshot 2024-06-29 180614](Screenshot%202024-06-29%20180614.png)
 
 # **File Descriptions**
 - `main.cpp:` 
