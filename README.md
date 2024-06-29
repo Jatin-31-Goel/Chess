@@ -54,25 +54,25 @@ After compiling and running the game, you can play chess directly in your consol
 - `main.cpp:` 
 Contains the main function and the game loop, initializing the game, handling user input, and updating the game state after each move.
 
-Bishop.cpp:
+- `Bishop.cpp:`
 Implements the Bishop piece, including its movement logic which allows diagonal movements on the chessboard, and includes methods to validate and update the Bishop's position.
 
-Knight.cpp:
+-`Knight.cpp:`
 Implements the Knight piece, defining its unique L-shaped movement on the chessboard, and contains methods to check the validity of moves and update its coordinates.
 
-Rook.cpp:
+-`Rook.cpp:`
 Implements the Rook piece, allowing horizontal and vertical movements, includes logic to check if the path is clear and updates its position on the board.
 
-Queen.cpp:
+-`Queen.cpp:`
 Implements the Queen piece by combining the movement logic of both the Rook and Bishop, enabling it to move any number of squares vertically, horizontally, or diagonally.
 
-Pawn.cpp:
+-`Pawn.cpp:`
 Implements the Pawn piece, defining its forward movement and capture mechanics, includes logic for initial double-step move, en passant, and promotion.
 
-King.cpp:
+-`King.cpp:`
 Implements the King piece, includes logic for its single-step movement in any direction and special conditions like castling.
 
-Chessboard.cpp:
+-`Chessboard.cpp:`
 Implements the Chessboard class, which manages the game state, holds the positions of all pieces, and includes methods to initialize the board, print its current state, and validate moves.
 
 # **Contributors**
