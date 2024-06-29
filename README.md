@@ -43,12 +43,16 @@ To run this chess game on your local machine, follow these steps:
    ```
    ./chessgame
    ```
-
+# **Reference for code in git in windows**
 ![Screenshot 2024-06-29 151744](Screenshot%202024-06-29%20151744.png)
 
 # **Usage**
 
 After compiling and running the game, you can play chess directly in your console. The game will prompt you to make moves by entering the coordinates of the pieces.
+
+# **Reference for usage in git in windows**
+
+![Screenshot 2024-06-29 180614](Screenshot%202024-06-29%20151744.png)
 
 # **File Descriptions**
 - `main.cpp:` 
