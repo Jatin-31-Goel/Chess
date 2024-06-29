@@ -43,6 +43,9 @@ To run this chess game on your local machine, follow these steps:
    ```
    ./chessgame
    ```
+
+![Screenshot 2024-06-29 151744](Screenshot%202024-06-29%20151744.png)
+
 # **Usage**
 
 After compiling and running the game, you can play chess directly in your console. The game will prompt you to make moves by entering the coordinates of the pieces.
