@@ -5,13 +5,13 @@
 using namespace std;
 
 int main(){
-    cout<<" Enter the name of first player : ";
+    cout<<"Enter the name of first player : \n";
     string name1;
     cin>>name1;
-    cout<<" \nEnter the name of second player : ";
+    cout<<"Enter the name of second player : ";
     string name2 ;
     cin>>name2;
-    cout<<"\nLets the game begin"<<endl;
+    cout<<"Lets the game begin"<<endl;
     cout<<endl<<name1 << " "<<"vs"<<" "<<name2<<endl<<endl;;
     chessboard chess;
     chess.print();
