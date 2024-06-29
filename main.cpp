@@ -5,14 +5,14 @@
 using namespace std;
 
 int main(){
-    cout<<"Enter the name of first player : \n";
+    cout<<"Enter the name of first player : ";
     string name1;
     cin>>name1;
     cout<<"Enter the name of second player : ";
     string name2 ;
     cin>>name2;
     cout<<"Lets the game begin"<<endl;
-    cout<<endl<<name1 << " "<<"vs"<<" "<<name2<<endl<<endl;;
+    cout<<endl<<name1 << " "<<"vs"<<" "<<name2<<endl;;
     chessboard chess;
     chess.print();
     int turn = 0;
