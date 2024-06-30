@@ -20,6 +20,8 @@ This project is a C++ implementation of the classic game of Chess. The game incl
 ### **Object-Oriented Design:** 
 Each chess piece is implemented as a separate class, with a base class for shared functionality.
 
+- for example: implemented single class and its related functions for bishop.
+
 ### **Standard Rules:** 
 Implements all standard chess rules, including special moves.
 
