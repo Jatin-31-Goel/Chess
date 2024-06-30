@@ -16,17 +16,21 @@ Welcome to our Chess Game project! This game is built using Object-Oriented Prog
 
 This project is a C++ implementation of the classic game of Chess. The game includes all standard chess pieces and follows the traditional rules of chess. It is designed to be run in a console environment. The project demonstrates the application of Object-Oriented Programming (OOP) principles in C++, with each chess piece represented as a class. The game features full gameplay functionality, including piece movement, capturing, and special moves like castling and en passant. It also includes basic input validation and game state management.
 
-## **Key Features:**
-### **Object-Oriented Design:** Each chess piece is implemented as a separate class, with a base class for shared functionality.
-### **Standard Rules:** Implements all standard chess rules, including special moves.
-### **Console Interface:** Designed to run in a terminal, providing a text-based interface for gameplay.
-### **Move Validation:** Ensures that all moves are valid according to chess rules before updating the game state.
-### **Game State Management:** Maintains and updates the board state, ensuring accurate tracking of piece positions and game progress.
-# **Features**
+# **Key Features:**
+### **Object-Oriented Design:** 
+Each chess piece is implemented as a separate class, with a base class for shared functionality.
 
-- Full implementation of standard chess rules.
-- Object-oriented design with separate classes for each type of piece.
-- Simple and clean code structure.
+### **Standard Rules:** 
+Implements all standard chess rules, including special moves.
+
+### **Console Interface:** 
+Designed to run in a terminal, providing a text-based interface for gameplay.
+
+### **Move Validation:** 
+Ensures that all moves are valid according to chess rules before updating the game state.
+
+### **Game State Management:** 
+Maintains and updates the board state, ensuring accurate tracking of piece positions and game progress.
 
 # **Installation**
 
