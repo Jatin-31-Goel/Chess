@@ -97,8 +97,5 @@ Implements the Chessboard class, which manages the game state, holds the positio
 - [Jatin Goel](https://github.com/member1)
 - [Pranav Menon](https://github.com/member2)
 
-# **License**
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
